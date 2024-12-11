@@ -44,7 +44,17 @@ contract HypERC1155 is
         _transferOwnership(_owner);
     }
 
-    // Pack tokenId and amount into uint256
+    /**
+     * @notice Transfers tokens to recipient on destination domain 
+     * @param destination Domain ID of the destination chain
+     * @param recipient Address of the recipient on destination chain
+     * @param tokenId ID of token to transfer, must be <= type(uint128).max
+     * @param amount Amount of tokens to transfer, must be <= type(uint128).max
+     * @return messageId ID of the dispatched message
+     * @dev Both tokenId and amount are packed into a single uint256 with 128 bits each.
+     * Will revert if either value exceeds uint128.max to maintain protocol compatibility.
+     */
+
     function transferRemote(
         uint32 destination,
         bytes32 recipient,
