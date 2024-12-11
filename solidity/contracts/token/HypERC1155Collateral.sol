@@ -10,7 +10,7 @@ import {OwnableUpgradeable} from "@openzeppelin/contracts-upgradeable/access/Own
 
 /**
  * @title Unofficial ERC1155 Token Collateral Router
- * @author Based on HypERC721. For example purposes only
+ * @author Based on HypERC721Collateral. For example purposes only
  */
 contract HypERC1155Collateral is 
     TokenRouter,
